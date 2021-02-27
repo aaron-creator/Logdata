@@ -1,58 +1,62 @@
 <template>
-  <div class="container">
-    <div class="container">
-      <h1>Register in LOGDATA</h1>
-      <br />
-      <br />
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <div>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="fullname"
-                aria-describedby="emailHelp"
-                placeholder="Enter Full Name"
-              />
+  <div class="container-fuild">
+      <Navbar />
+      <div class="container">
+        <h1>Register in LOGDATA</h1>
+        <br />
+        <br />
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullname"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter Full Name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="username"
+                  class="form-control"
+                  id="username"
+                  placeholder="Enter username"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmpassword"
+                  placeholder="Confirm Password"
+                />
+              </div>
+              <button class="btn btn-primary" @click="reg()" >Register</button>
             </div>
-            <div class="mb-3">
-              <input
-                type="username"
-                class="form-control"
-                id="username"
-                placeholder="Enter username"
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-            <div class="mb-3">
-              <input
-                type="password"
-                class="form-control"
-                id="confirmpassword"
-                placeholder="Confirm Password"
-              />
-            </div>
-            <button class="btn btn-primary" @click="reg()" >Register</button>
           </div>
+          <div class="col-md-3"></div>
         </div>
-        <div class="col-md-3"></div>
       </div>
-    </div>
   </div>
 </template>
 
 <script>
+import Navbar from "../components/Navbar"
 export default {
-    
+    components: {
+    Navbar
+    },
     methods:{
         reg: function(){
             let localStorage = window.localStorage;
