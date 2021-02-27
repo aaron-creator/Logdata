@@ -38,7 +38,7 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="confirmpassword"
+                  id="cpassword"
                   placeholder="Confirm Password"
                 />
               </div>
@@ -59,6 +59,7 @@ export default {
     },
     methods:{
         reg: function(){
+            const regName = /^[A-Z][a-z]{3,30}(\s[A-Z](\.|[a-z]{2,30})?)*$/;
             let localStorage = window.localStorage;
             let users_str=localStorage.getItem("users");
             let users = [];
@@ -66,20 +67,28 @@ export default {
                 users = JSON.parse(users_str);
             }
             
-            
+          
             let name = document.getElementById("fullname").value;
             let username = document.getElementById("username").value;
             let password= document.getElementById("password").value;
+            let cpassword = document.getElementById("cpassword").value;
+            if(!regName.test(name)){
+              alert('Invalid name given.');
+            }
+            else if(cpassword!=password){
+               alert('Invalid password entered.');
+            }
+            else{
+              let user_obj = { name,username,password}
+              users.push(user_obj);
+              console.log(users);
 
-    
-            let user_obj = { name,username,password}
-            users.push(user_obj);
-            console.log(users);
-
-            
-            localStorage.setItem("users",JSON.stringify(users));
-    
-                     
+              
+              localStorage.setItem("users",JSON.stringify(users));
+              alert("Successfully Registered");
+              window.location="/register";   
+            }
+                  
         }
 
     }

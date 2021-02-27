@@ -74,7 +74,7 @@ export default {
                     this.$router.push({ name: 'Dashboard',params:{users,curruser} })
                     
                 }else{
-                    console.log("Incorrect Username/password")
+                    alert("Incorrect Username or Password");
                 }
                 
             }
