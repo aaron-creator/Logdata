@@ -23,17 +23,20 @@
         <br>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-9">
-                <table class="table table-bordered" v-if="username=='Admin'">
-                    <tr>
-                        <th>Name</th>
-                        <th>Username</th>
-                    </tr>
-                    <tr v-for="user in users" v-bind:key="user">
-                        <td>{{user.name}}</td>
-                        <td>{{user.username}}</td>
-                    </tr>
-                </table>
+            <div class="col-md-6">
+                <center>
+                    <table class="table table-bordered" v-if="username=='Admin'">
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                        </tr>
+                        <tr v-for="user in users" v-bind:key="user">
+                            <td>{{user.name}}</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                    </table>
+                </center>
+                
             </div>
             <div class="col-md-3"></div>
             
@@ -71,9 +74,6 @@ table{
     border: black solid;
     background-color: aquamarine;
     width: 50%;
-}
-.col-md-9{
-    padding-left: 80px;
 }
 </style>
  
